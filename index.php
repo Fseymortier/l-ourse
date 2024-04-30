@@ -11,7 +11,7 @@ require_once('composants/header.php');
         <a class="links_adherer" href="/l-ourse/pages/particulier.php">Adhérer</a>
     </div>
     <div class="items_adherer">
-        <p class="txt_adherer">Vous souhaitez des renseignement pour accepter les OURSES adans vos moyens de paiement et soutenir l'économie locale ?</p>
+        <p class="txt_adherer">Vous souhaitez des renseignement pour accepter les OURSES dans vos moyens de paiement et soutenir l'économie locale ?</p>
         <a class="links_adherer" href="/l-ourse/pages/prestataire.php">Adhérer</a>
     </div>
     <div class="item_txt_presentation">
@@ -21,7 +21,7 @@ require_once('composants/header.php');
 </section>
 <section class="container_accueil">
     <div class="containeur_txt_accueil">
-        <p class="txt_accueil">Plus nous utilisons l'OURSE, plus les effets seront visibles.</p>
+        <p class="txt_accueil">Plus nous utilisons l'OURSE, plus les effets seront visibles !</p>
     </div>
     <div class="container_contributeur">
         <p class="txt_contributeur">Pour y contribuer, rejoignez nous en vous inscrivant auprès du comptoir d'échange le plus proche de chez vous :</p>

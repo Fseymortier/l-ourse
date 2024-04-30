@@ -27,7 +27,7 @@ require_once('../composants/header.php');
             <p>Ce Logo, vous assure qu'il est possible de régler en OURSE.</p>
             <img class="image_entete" src="/l-ourse/images/ourse3.webp" alt="logo l'ourse">
             <p><a class="colored_txt">Pour les localiser</a></p>
-            <p>Si vous avez repéré un prestataire près de chez vous qui souhaiterait accepter les Ourse, envoyez nous <a class="colored_txt" href="">un message ICI</a></p>
+            <p>Si vous avez repéré un prestataire près de chez vous qui souhaiterait accepter les OURSES, envoyez nous <a class="colored_txt" href="">un message ICI</a></p>
         </div>
     </div>
     <div class="container_item_adherer container_item_jaune">

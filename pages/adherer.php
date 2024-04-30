@@ -53,7 +53,7 @@ require_once('../composants/header.php');
             <a class="links_adherer" href="/l-ourse/pages/particulier.php">Adhérer</a>
         </div>
         <div class="items_adherer">
-            <p class="txt_adherer">Vous souhaitez des renseignement pour accepter les OURSES adans vos moyens de paiement et soutenir l'économie locale ?</p>
+            <p class="txt_adherer">Vous souhaitez des renseignement pour accepter les OURSES dans vos moyens de paiement et soutenir l'économie locale ?</p>
             <a class="links_adherer" href="/l-ourse/pages/prestataire.php">Adhérer</a>
         </div>
     </div>
