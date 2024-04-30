@@ -4,7 +4,9 @@ footer{
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: flex-start;
+    margin-top: 6em;
     padding: 0.5em;
+    border-top: 1px solid var(--jaune);
 }
 .icone_facebook{
     width: 10%;
