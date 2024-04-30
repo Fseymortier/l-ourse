@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $title ?> - L'ourse</title>
-    <link rel="icon" href="images/ourse2.webp" />
+    <link rel="icon" type="text/css" href="/l-ourse/images/ourse2.webp" />
+
+    <link rel="stylesheet"  href="/l-ourse/styles/nav.css">
+    <link rel="stylesheet"  href="/l-ourse/styles/header.css">
+    <link rel="stylesheet"  href="/l-ourse/styles/index.css">
+    <link rel="stylesheet"  href="/l-ourse/styles/footer.css">
 </head>
 
 <body>
     <header>
-        <?php require_once('composants/nav.php') ?>
-        <div>
-            <div>
+        <?php require('nav.php') ?>
+        <div class="container_entete">
+            <div class="item_header">
                 <h1><?php echo $h1 ?></h1>
-                <p><?php echo $txtHeader ?></p>
+                <p class="txt_header"><?php echo $txtHeader ?></p>
             </div>
-            <img src="images/ourse3.webp" alt=" logo l'ourse">
+            <img class="image_entete" src="/l-ourse/images/ourse3.webp" alt="logo l'ourse">
         </div>
     </header>

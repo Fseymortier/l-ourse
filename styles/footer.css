@@ -1,0 +1,33 @@
+footer{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 0.5em;
+}
+.icone_facebook{
+    width: 10%;
+    min-width: 5em;
+    align-self: center;
+}
+.item_footer{
+    width: 30%;
+    min-width: 17em;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.content_footer{
+    padding: 0.5em;
+    text-align: center;
+}
+.logo_footer{
+    width: 20%;
+    min-width: 15em;
+    align-self: center;
+}
+.icone_facebook,.item_footer,.logo_footer{
+    margin: 0.5em 0;
+}
