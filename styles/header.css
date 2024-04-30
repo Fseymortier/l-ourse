@@ -10,6 +10,10 @@
 body{
     font-family: 'typo';
 }
+a{
+    text-decoration: none;
+    color: unset;
+}
 .container_entete{
     width: 100%;
     display: flex;
@@ -23,6 +27,7 @@ body{
 }
 .item_header{
     width: 45%;
+    max-width: 45em;
     min-width: 18em;
     display: flex;
     flex-direction: column;
@@ -34,6 +39,7 @@ h1{
 }
 .txt_header{
     max-width: 28em;
+    font-size: 1.2em;
 }
 .colored_txt_header,.colored_txt{
     font-size: 1.1em;

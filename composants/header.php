@@ -9,6 +9,7 @@
     <link rel="stylesheet"  href="/l-ourse/styles/nav.css">
     <link rel="stylesheet"  href="/l-ourse/styles/header.css">
     <link rel="stylesheet"  href="/l-ourse/styles/index.css">
+    <link rel="stylesheet"  href="/l-ourse/styles/adherer.css">
     <link rel="stylesheet"  href="/l-ourse/styles/footer.css">
 </head>
 
