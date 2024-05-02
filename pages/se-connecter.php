@@ -8,9 +8,9 @@ require_once('../composants/session.php');
 <section class="container_adherer">
   <form method="POST" action="">
     <p class="champ_obligatoire">Connectez-vous</p>
-    <label class="form-label" for="form2Example11">Email:</label>
+    <label for="form2Example11">Email:</label>
     <input type="email" id="form2Example11" name="email"/>
-    <label class="form-label" for="form2Example22">Mot de passe:</label>
+    <label for="form2Example22">Mot de passe:</label>
     <input type="password" id="form2Example22" name="password" />
     <input type="submit" value="Connexion" class="button_form button_connexion">
   </form>

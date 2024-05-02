@@ -13,9 +13,16 @@ label{
     margin-bottom: 0.5em;
 }
 input,textarea{
-    height: 3em;
     border: 2px solid var(--violet);
     margin-bottom: 1em;
+    border-radius: 2em;
+    padding: 0.5em 1em;
+}
+input{    
+    height: 3em;
+}
+textarea{
+    height: 6em;
 }
 .button_form{
     cursor: pointer;
