@@ -11,6 +11,10 @@ $allActus = $actus->getAllACTU();
 
 ?>
 <section class="container_actu">
+    <?php if (isset($_SESSION['user'])) {    
+?>
+<a href="/l-ourse/pages/ajouter_actus">Ajouter des actualités</a>
+<?php } ?>
 <?php foreach ($allActus as $index => $actu) : ?>
         <?php if ($index % 2 === 0) : ?>
             <div class='item_actu item_actu1'>
@@ -25,25 +29,3 @@ $allActus = $actus->getAllACTU();
     <?php endforeach; ?>
 </section>
 <?php require_once('../composants/footer.php') ?>
-<!-- 
-<script>
-    let index = 0
-array.map((actu) => {
-    if(index % 2 === 0){
-    <div class='item_actu'>
-    <h2>{actu.titre}</h2>
-    <p class='txt_actu'>{actu.date} - {actu.lieu}</p>
-    <img src={actu.image} class="img_actu" alt='affiche actualité' />
-    <p class='txt_actu'>{actu.description}</p>
-    </div>
-}
-else{
-    <div class='item_actu item_actu2'>
-    <h2>{actu.titre}</h2>
-    <p class='txt_actu'>{actu.date} - {actu.lieu}</p>
-    <img src={actu.image} class="img_actu" alt='affiche actualité' />
-    <p class='txt_actu'>{actu.description}</p>
-    </div>
-}
-});
-</script> -->
