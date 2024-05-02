@@ -48,6 +48,12 @@ textarea{
 .button_sincrire:hover{
     border: 2px solid var(--violet);
 }
-.txt_error{
+.txt_validate,.txt_error{
     text-align: center;
+}
+.txt_validate{
+    color: var(--violet);
+}
+.txt_error{
+    color: red;
 }

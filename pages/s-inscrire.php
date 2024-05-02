@@ -5,28 +5,41 @@ $txtHeader = 'Inscrivez-vous pour nous rejoindre !';
 require_once('../composants/header.php');
 require_once('../db/conn.php');
 require_once('../db/User.php');
-?>
-<?php
 
-if(isset($_POST['submit']))
-{
-  $user=$_POST['user'];
-  $email=$_POST['email'];
-  $password=$_POST['MDP'];
-    $result=$User->InsertUser($user,$email,$password);
-    
+if (isset($_POST['submit'])) {
+  $user = $_POST['user'];
+  $email = $_POST['email'];
+  $password = $_POST['MDP'];
+  $result = $User->InsertUser($user, $email, $password);
+  if ($result == true) {
+    // Si $userData est un tableau, le compte n'existe pas
+    $error_message = 'Compte créé';
+    $isValide = true;
+  } else {
+    // Si $userData n'est pas un tableau, $userData contient le message d'erreur
+    $error_message = "Le nom d'utilisateur est déjà utilisé";
+    $isValide = false;
+  }
 }
 ?>
 <section class="container_adherer">
-<form method="POST" action="">
+  <form method="POST" action="">
     <p class="champ_obligatoire">Inscrivez-vous</p>
+    <?php
+    // Afficher le message d'erreur s'il existe
+    if ($isValide === false) {
+      echo "<p class='txt_error'>$error_message</p>";
+    }else{
+      echo "<p class='txt_validate'>$error_message</p>";
+    }
+    ?>
     <label for="">Nom d'utilisateur / pseudo :</label>
-    <input type="text" id="user" name="user"/>
+    <input type="text" id="user" name="user" />
     <label for="form2Example11">Email :</label>
-    <input type="email" id="form2Example11" name="email"/>
+    <input type="email" id="form2Example11" name="email" />
     <label for="form2Example22">Mot de passe :</label>
     <input type="password" id="form2Example22" name="MDP" />
-    <input type="submit"name="submit" value="Connexion" class="button_form button_connexion">
+    <input type="submit" name="submit" value="S'inscrire" class="button_form button_connexion">
   </form>
 </section>
 <?php require_once('../composants/footer.php') ?>
