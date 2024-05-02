@@ -49,10 +49,12 @@ require_once('../composants/header.php');
     </div>
     <div class="container_items_adherer">
         <div class="items_adherer">
+        <h2>Particulier</h2>
             <p class="txt_adherer">Vous souhaitez des renseignement concernant l'adhésion à l'association et utiliser l'OURSE au quotidien ?</p>
             <a class="links_adherer" href="/l-ourse/pages/particulier.php">Adhérer</a>
         </div>
         <div class="items_adherer">
+        <h2>Prestataire</h2>
             <p class="txt_adherer">Vous souhaitez des renseignement pour accepter les OURSES dans vos moyens de paiement et soutenir l'économie locale ?</p>
             <a class="links_adherer" href="/l-ourse/pages/prestataire.php">Adhérer</a>
         </div>

@@ -16,8 +16,9 @@
             </div>
         </div>
         <div class="item_menu">
-            <a class="nav_link nav_link_actu" href="/l-ourse/pages/actualites.php">Actualités</a>
+            <a class="nav_link nav_link_actu" href="#">Communauté</a>
             <div class="second_menu second_menu_actu">
+            <a class="nav_link nav_link_actu" href="/l-ourse/pages/actualites.php">Actualités</a>
                 <a class="nav_link" href="/l-ourse/pages/pire-campagne.php">La pire campagne</a>
             </div>
         </div>
