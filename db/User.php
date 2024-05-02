@@ -10,18 +10,20 @@ class User
         $this->db=$conn;
     }
 
-    public function Password($user)
+    public function Password($user,$password)
     {
         try
         {
+            $password_encypt = password_hash($password, PASSWORD_DEFAULT);
             $sql= "select ID, Nom, Email, Password,Compte FROM compte where Email = :email" ;
             $stmt =$this->db->prepare($sql);
-            $stmt->bindParam(':email', $user);
+            $stmt->bindParam(':user', $user);
+            $stmt->bindParam(':mdp', $password);
             $stmt->execute();
             $resultat = $stmt->fetch();
             if($resultat)
             {
-                return $resultat;
+                
             }
         }
         catch (PDOException $e) {
@@ -74,5 +76,17 @@ public function InsertUser($nom,$email,$password,$compte)
 
         }
 }
+ // funtion to return all users form rese bd
+ public function getUsers()
+ {
+     try {
+         $sql = "SELECT * FROM compte";
+         $result = $this->db->query($sql);
+         return $result;
+     } catch (PDOException $e) {
+         echo $e->getMessage();
+         return false;
+     }
+ }
 }
 ?>
