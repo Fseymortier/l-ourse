@@ -6,7 +6,7 @@
             <a class="nav_link" href="/l-ourse/index.php">Accueil</a>
         </div>
         <div class="item_menu">
-            <a class="nav_link" href="/l-ourse/pages/la-carte.php">La carte</a>
+            <a class="nav_link" href="/l-ourse/pages/carte.php">La carte</a>
         </div>
         <div class="item_menu">
             <a class="nav_link nav_link_adherer" href="/l-ourse/pages/adherer.php">Adhérer</a>
@@ -44,3 +44,23 @@
     </div>
     <a href="">Se déconnecter</a>
 </nav> -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var navigationItems = document.querySelectorAll("nav a");
+
+  // Fonction pour vérifier l'URL de la page actuelle
+  function checkCurrentPage() {
+    var currentPageUrl = window.location.href;
+    navigationItems.forEach(function(item) {
+      if (item.href === currentPageUrl) {
+        item.classList.add("selected");
+      }
+    });
+  }
+
+  // Appeler la fonction pour vérifier l'URL de la page actuelle
+  checkCurrentPage();
+});
+
+
+</script>
