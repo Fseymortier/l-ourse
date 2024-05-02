@@ -10,13 +10,11 @@ if (isset($_POST['submit'])) {
   $user = $_POST['user'];
   $email = $_POST['email'];
   $password = $_POST['MDP'];
-  $result = $User->InsertUser($user, $email, $password);
+  $result = $User->Register($user, $email, $password);
   if ($result == true) {
-    // Si $userData est un tableau, le compte n'existe pas
     $error_message = 'Compte créé';
     $isValide = true;
   } else {
-    // Si $userData n'est pas un tableau, $userData contient le message d'erreur
     $error_message = "Le nom d'utilisateur est déjà utilisé";
     $isValide = false;
   }

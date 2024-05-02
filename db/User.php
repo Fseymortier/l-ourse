@@ -37,7 +37,7 @@ class User
         }
     }
 
-    public function GetUserbyUser($user)
+    public function GetUserbyPseudo($user)
     {
         $sql = "SELECT COUNT(*) AS count FROM compte WHERE user = :user";
         $stmt = $this->db->prepare($sql);
@@ -51,10 +51,10 @@ class User
         }
     }
 
-    public function InsertUser($user, $email, $password)
+    public function Register($user, $email, $password)
     {
         try {
-            $res = $this->GetUserbyUser($user);
+            $res = $this->GetUserbyPseudo($user);
             if ($res === false) {
                 return false;
             } else {
