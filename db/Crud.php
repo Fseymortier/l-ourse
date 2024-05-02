@@ -10,6 +10,67 @@ class crud
         $this->db = $conn;
     }
 
+    public function insertACTU(
+        $titreActu,
+        $imgActu,
+        $descActu,
+        $dateActu,
+        $villeActu,
+        $lienActu,
+    )
+    {
+        try
+        {
+            // define sql statement to be executed
+         $sql = "INSERT INTO `actu`(`TITREACTU`,`IMGACTU`,`DESCACTU`,`DATEACTU`,`VILLEACTU` VALUES (:titreActu, :imgActu, :descActu, :dateActu, :villeActu)";
+         //prepare the sql statement for execution
+         $stmt = $this->db->prepare($sql);
+         // bind all placeholders to the actual values
+         $stmt->bindparam(':titreActu', $titreActu);
+         $stmt->bindparam(':imgActu', $imgActu);
+         $stmt->bindparam(':descActu', $descActu);
+         $stmt->bindparam(':dateActu', $dateActu);
+         $stmt->bindparam(':villeActu', $villeActu);
+         $stmt->bindparam(':lienActu', $lienActu);
+          // execute statement
+          $stmt->execute();
+          return true;
+        }
+        catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
+
+    public function editActu($param)
+    {
+
+        try {
+            $sql = "UPDATE `actu` SET
+            titreActu     =?,
+            imgActu          =?,
+            descActu      =?,
+            dateActu      =?, 
+            villeActu        =?, 
+            lienActu        =?,            
+            WHERE 
+            NOACTU           =?";
+            $stmt = $this->db->prepare($sql);
+            /*$stmt->bindparam(':titreActu', $titreActu);
+         $stmt->bindparam(':imgActu', $imgActu);
+         $stmt->bindparam(':descActu', $descActu);
+         $stmt->bindparam(':dateActu', $dateActu);
+         $stmt->bindparam(':villeActu', $villeActu);
+         $stmt->bindparam(':lienActu', $lienActu);*/
+            // execute statement
+            $stmt->execute($param);
+            return true;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return  false;
+        }
+    }
+
     public function deleteActu($id)
     {
         try {
@@ -23,5 +84,33 @@ class crud
             return false;
         }
     }
+    public function getAllACTU()
+    {
+        try {
+            $sql = "SELECT * FROM actu ";
+            $result = $this->db->query($sql);
+            return $result;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
+    public function getActuById($id) 
+    {
+        try
+        {
+            $sql="SELECT `NOACTU`,`TITREACTU`,`IMGACTU`,`DESCACTU`,`DATEACTU`,`VILLEACTU`,`	LIENACTU`FROM `actu` WHERE NOACTU=:id";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindparam(':id', $id);
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $result;
+        }catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
+
 }
+
 ?>
