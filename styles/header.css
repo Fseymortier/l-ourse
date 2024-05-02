@@ -10,6 +10,9 @@
 body{
     font-family: 'typo';
 }
+p{    
+    font-size: 1.2em;
+}
 a{
     text-decoration: none;
     color: unset;
@@ -42,7 +45,7 @@ h1{
     font-size: 1.2em;
 }
 .colored_txt_header,.colored_txt{
-    font-size: 1.1em;
+    font-size: 1em;
     font-weight: bold;
 }
 .colored_txt_header{    

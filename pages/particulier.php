@@ -8,10 +8,10 @@ require_once('../composants/header.php');
     <div class="container_item_adherer container_item_violet">
         <h2 class="titles_adherer title_violet">Comment cela fonctionne-t-il ?</h2>
         <div class="item_adherer">
-        <p>Toute personne souhaitant utiliser cette monnaie doit adhérer à l'association OURSE en amenant ce <a class="colored_txt" href="/l-ourse/documents/FORMAdhmodDef.pdf">bulletin d'adhésion téléchargeable</a>  rempli au comptoir d'échange le plus proche. (voir plus bas). Vous pouvez maintenant adhérer en ligne <a class="colored_txt" href="https://framaforms.org/lourse-fiche-dadhesion-pour-les-particuliers-1533566569">sur ce formulaire</a>, en réglant votre cotisation par virement vers le compte indiqué par le formulaire.</p>
-        <p>L'adhésion est à prix libre néanmoins conseillé à 10 euros.</p>
-        <p>Les OURSES peuvent être obtenus dans un des cinq comptoirs d'échange (consultables sur la carte des prestataires), au taux de 1 euro = 1 OURSE.</p>
-        <p>Ces OURSES peuvent être dépensés chez les prestataires qui l'acceptent (voir plus bas).</p>
+            <p>Toute personne souhaitant utiliser cette monnaie doit adhérer à l'association OURSE en amenant ce <a class="colored_txt" href="/l-ourse/documents/FORMAdhmodDef.pdf">bulletin d'adhésion téléchargeable</a> rempli au comptoir d'échange le plus proche. (voir plus bas). Vous pouvez maintenant adhérer en ligne <a class="colored_txt" href="https://framaforms.org/lourse-fiche-dadhesion-pour-les-particuliers-1533566569">sur ce formulaire</a>, en réglant votre cotisation par virement vers le compte indiqué par le formulaire.</p>
+            <p>L'adhésion est à prix libre néanmoins conseillé à 10 euros.</p>
+            <p>Les OURSES peuvent être obtenus dans un des cinq comptoirs d'échange (consultables sur la carte des prestataires), au taux de 1 euro = 1 OURSE.</p>
+            <p>Ces OURSES peuvent être dépensés chez les prestataires qui l'acceptent (voir plus bas).</p>
         </div>
     </div>
     <div class="container_item_adherer container_item_jaune">
@@ -42,10 +42,10 @@ require_once('../composants/header.php');
             <p>C'est ici que vous pourrez échanger vos Euros en monnaie locale.</p>
             <h3>Il y a forcement un comptoir d'échange proche de chez vous :</h3>
             <ul>
-                <li>Questembert : <a class="colored_txt" href="">Halle Terre Native</a></li>
+                <li>Questembert : <a class="colored_txt" href="https://www.facebook.com/halleterrenative/">Halle Terre Native</a></li>
                 <li>Muzillac / Ambon : <a class="colored_txt" href="https://www.biocooplepanierbio.com/">Biocoop Le Panier Bio</a></li>
-                <li>La roche-Bernard : <a class="colored_txt" href="https://www.lapetitebanquise.fr/">La Petite Banquise</a></li>
                 <li>Nivillac : <a class="colored_txt" href="https://ovalenvert.fr/">O'Val en Vert</a></li>
+                <li>La roche-Bernard : <a class="colored_txt" href="https://www.lapetitebanquise.fr/">La Petite Banquise</a></li>
                 <li>Damgan : <a class="colored_txt" href="https://www.lesbijouxmarine.fr/">Les Bijoux Marine</a></li>
             </ul>
             <p>C'est ici que vous pourrez échanger vos Euros en monnaie locale. Si vous avez repéré un commerce près de chez vous qui souhaiterait devenir comptoir d'échange, <a class="colored_txt" href="/l-ourse/pages/contact.php">envoyez nous un message ICI</a>.</p>

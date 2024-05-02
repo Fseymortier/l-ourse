@@ -22,6 +22,9 @@
             </div>
         </div>
         <div class="item_menu">
+            <a class="nav_link" href="/l-ourse/pages/contact.php">Contact</a>
+        </div>
+        <div class="item_menu">
             <a class="nav_link" href="/l-ourse/pages/se-connecter.php">Se connecter</a>
         </div>
     </div>
@@ -45,22 +48,20 @@
     <a href="">Se déconnecter</a>
 </nav> -->
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-  var navigationItems = document.querySelectorAll("nav a");
+    document.addEventListener("DOMContentLoaded", function() {
+        var navigationItems = document.querySelectorAll("nav a");
 
-  // Fonction pour vérifier l'URL de la page actuelle
-  function checkCurrentPage() {
-    var currentPageUrl = window.location.href;
-    navigationItems.forEach(function(item) {
-      if (item.href === currentPageUrl) {
-        item.classList.add("selected");
-      }
+        // Fonction pour vérifier l'URL de la page actuelle
+        function checkCurrentPage() {
+            var currentPageUrl = window.location.href;
+            navigationItems.forEach(function(item) {
+                if (item.href === currentPageUrl) {
+                    item.classList.add("selected");
+                }
+            });
+        }
+
+        // Appeler la fonction pour vérifier l'URL de la page actuelle
+        checkCurrentPage();
     });
-  }
-
-  // Appeler la fonction pour vérifier l'URL de la page actuelle
-  checkCurrentPage();
-});
-
-
 </script>
