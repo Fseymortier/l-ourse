@@ -27,6 +27,9 @@
         <div class="item_menu">
             <a class="nav_link" href="/l-ourse/pages/se-connecter.php">Se connecter</a>
         </div>
+        <div class="item_menu">
+            <a class="nav_link" href="/l-ourse/pages/s-inscrire.php">S'inscrire</a>
+        </div>
     </div>
 </nav>
 <!-- 
@@ -64,19 +67,43 @@
     </div>
 </nav> -->
 <script>
+</script>
+<script>
     document.addEventListener("DOMContentLoaded", function() {
-        var navigationItems = document.querySelectorAll("nav a");
+        var navigationLinks = document.querySelectorAll(".item_menu a");
 
         // Fonction pour vérifier l'URL de la page actuelle
         function checkCurrentPage() {
             var currentPageUrl = window.location.href;
-            navigationItems.forEach(function(item) {
-                if (item.href === currentPageUrl) {
-                    item.classList.add("selected");
+            navigationLinks.forEach(function(link) {
+                // Vérifier si l'URL de la page actuelle correspond à l'un des liens de navigation
+                if (link.href === currentPageUrl) {
+                    link.classList.add("selected");
                 }
             });
         }
+        // Appeler la fonction pour vérifier l'URL de la page actuelle
+        checkCurrentPage();
+    });
+    document.addEventListener("DOMContentLoaded", function() {
+        var navigationLinks = document.querySelectorAll(".second_menu a");
 
+        // Fonction pour vérifier l'URL de la page actuelle
+        function checkCurrentPage() {
+            var currentPageUrl = window.location.href;
+            navigationLinks.forEach(function(link) {
+                // Vérifier si l'URL de la page actuelle correspond à l'un des liens de navigation
+                if (link.href === currentPageUrl) {
+                    link.classList.add("selected");
+
+                    // Si l'élément a un sous-menu, ajouter la classe 'selected' à son parent
+                    var parentItem = link.closest(".item_menu");
+                    if (parentItem) {
+                        parentItem.classList.add("selected");
+                    }
+                }
+            });
+        }
         // Appeler la fonction pour vérifier l'URL de la page actuelle
         checkCurrentPage();
     });
