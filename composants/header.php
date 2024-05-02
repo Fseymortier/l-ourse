@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/l-ourse/styles/carte.css">
     <link rel="stylesheet" href="/l-ourse/styles/contact.css">
     <link rel="stylesheet" href="/l-ourse/styles/campagne.css">
+    <link rel="stylesheet" href="/l-ourse/styles/actualites.css">
 </head>
 
 <body>

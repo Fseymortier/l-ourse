@@ -1,0 +1,27 @@
+.container_actu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 2em 0;
+}
+.item_actu{
+    width: 30%;
+    min-width: 18em;
+    text-align: center;
+    border-radius: 2em;
+    padding: 0.5em;
+    margin: 0.5em;
+}
+.item_actu1{    
+    background-color: var(--jaune);
+    border: 3px solid var(--jaune);
+}
+.item_actu2{
+    border: 3px solid var(--violet);
+}
+.txt_actu{
+    margin: 1em 0;
+}
+.img_actu{
+    width: 100%;
+}
