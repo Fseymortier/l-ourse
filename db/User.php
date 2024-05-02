@@ -2,6 +2,7 @@
 
 class User
 {
+
     private $db;
 
     function __construct($conn)
@@ -35,17 +36,15 @@ class User
     {
         $sql = "SELECT COUNT(*) AS count FROM compte WHERE user = :user";
         $stmt =$this->db->prepare($sql);
-        $stmt->bindParam(':email', $user);
+        $stmt->bindParam(':user', $user);
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($result) {
-            
-            return "L'email est déjà utilisé !";
+        if ($result['count'] > 0) {
+            echo"'<div class=alert alert-success'>L'email est déjà utilisé.</div>'";
         }  else {
             return $result;
     }
-
 }
 
 public function InsertUser($user,$email,$password)
@@ -53,12 +52,12 @@ public function InsertUser($user,$email,$password)
         try
         {
             $res=$this->GetUserbyUser($user);
-            if($res)
+            if($res['count']>0)
             {
                 return false;
             }
             else{
-                $sql="INSERT INTO `compte`(`USER`,`MDP`,`ADRCOMPTE`,`TYPCOMPTE`)VALUES(:user,:MDP,:email,NULL)";
+                $sql="INSERT INTO `compte`(`USER`,`MDP`,`ADRCOMPTE`)VALUES(:user,:MDP,:email)";
                 $stmt =$this->db->prepare($sql);
                 $stmt->bindParam(':user', $user);
                 $stmt->bindParam(':MDP', $password);
@@ -67,9 +66,13 @@ public function InsertUser($user,$email,$password)
                 $stmt->execute();
                 return true;
             }
+
+           
+        
         }catch (PDOException $e) {
             echo $e->getMessage();
             return false;
+
         }
 }
  // funtion to return all users form rese bd
