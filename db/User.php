@@ -9,22 +9,31 @@ class User
     {
         $this->db = $conn;
     }
-
-    public function Password($user, $password)
+    public function Login($user, $password)
     {
         try {
-            $password_encypt = password_hash($password, PASSWORD_DEFAULT);
-            $sql = "select ID, Nom, Email, Password,Compte FROM compte where Email = :email";
+            // Rechercher l'utilisateur par son nom d'utilisateur
+            $sql = "SELECT `USER`, `MDP` FROM `compte` WHERE `USER` = :user";
             $stmt = $this->db->prepare($sql);
             $stmt->bindParam(':user', $user);
-            $stmt->bindParam(':mdp', $password);
             $stmt->execute();
-            $resultat = $stmt->fetch();
-            if ($resultat) {
+            $userData = $stmt->fetch(PDO::FETCH_ASSOC);
+            // Vérifier si l'utilisateur existe
+            if (!$userData) {
+                return "L'utilisateur n'existe pas.";
+            }
+
+            // Vérifier si le mot de passe correspond
+            if (password_verify($password, $userData['MDP'])) {
+                // Le mot de passe est correct, retourner les données de l'utilisateur
+                return $userData;
+            } else {
+                // Le mot de passe est incorrect
+                return "Le mot de passe est incorrect.";
             }
         } catch (PDOException $e) {
-            echo $e->getMessage();
-            return false;
+            // En cas d'erreur de la base de données, renvoyer un message d'erreur
+            return "Erreur de la base de données : " . $e->getMessage();
         }
     }
 
@@ -49,20 +58,26 @@ class User
             if ($res === false) {
                 return false;
             } else {
-                $sql = "INSERT INTO `compte`(`USER`,`MDP`,`ADRCOMPTE`)VALUES(:user,:MDP,:email)";
+                // Hacher le mot de passe
+                $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+                // Préparer et exécuter la requête SQL avec le mot de passe haché
+                $sql = "INSERT INTO `compte`(`USER`,`MDP`,`ADRCOMPTE`) VALUES (:user, :MDP, :email)";
                 $stmt = $this->db->prepare($sql);
                 $stmt->bindParam(':user', $user);
-                $stmt->bindParam(':MDP', $password);
+                $stmt->bindParam(':MDP', $hashedPassword); // Utiliser le mot de passe haché
                 $stmt->bindParam(':email', $email);
 
                 $stmt->execute();
                 return true;
             }
         } catch (PDOException $e) {
-            //echo $e->getMessage();
+            // Gérer les erreurs éventuelles
+            // echo $e->getMessage();
             return false;
         }
     }
+
     // funtion to return all users form rese bd
     public function getUsers()
     {

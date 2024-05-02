@@ -19,7 +19,7 @@
 
 <body>
     <header>
-        <?php require('nav.php') ?>
+        <?php require_once('nav.php') ?>
         <div class="container_entete">
             <div class="item_header">
                 <h1><?php echo $h1 ?></h1>

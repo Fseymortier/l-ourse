@@ -50,6 +50,7 @@ textarea{
 }
 .txt_validate,.txt_error{
     text-align: center;
+    font-weight: bold;
 }
 .txt_validate{
     color: var(--violet);

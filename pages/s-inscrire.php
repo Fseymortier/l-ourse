@@ -27,18 +27,20 @@ if (isset($_POST['submit'])) {
     <p class="champ_obligatoire">Inscrivez-vous</p>
     <?php
     // Afficher le message d'erreur s'il existe
-    if ($isValide === false) {
-      echo "<p class='txt_error'>$error_message</p>";
-    }else{
-      echo "<p class='txt_validate'>$error_message</p>";
+    if (isset($isValide)) {
+      if ($isValide === false) {
+        echo "<p class='txt_error'>$error_message</p>";
+      } else {
+        echo "<p class='txt_validate'>$error_message</p>";
+      }
     }
     ?>
     <label for="">Nom d'utilisateur / pseudo :</label>
     <input type="text" id="user" name="user" />
-    <label for="form2Example11">Email :</label>
-    <input type="email" id="form2Example11" name="email" />
-    <label for="form2Example22">Mot de passe :</label>
-    <input type="password" id="form2Example22" name="MDP" />
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="email" />
+    <label for="password">Mot de passe :</label>
+    <input type="password" id="password" name="MDP" />
     <input type="submit" name="submit" value="S'inscrire" class="button_form button_connexion">
   </form>
 </section>
