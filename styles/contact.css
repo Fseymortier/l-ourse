@@ -36,6 +36,7 @@ input,textarea{
 }
 .button_sincrire{
     color: var(--violet);
+    width: 70%;
 }
 .button_sincrire:hover{
     border: 2px solid var(--violet);
