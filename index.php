@@ -1,16 +1,18 @@
 <?php
 $title = 'Accueil';
 $h1 = 'Bienvenue sur le site de l\'ourse !';
-$txtHeader = 'L\'OURSE est la <span class=\'colored_txt_header\' >monnaie locale citoyenne complémentaire, sociale et solidaire</span> du Pays de Questembert à celui de Férel.';
+$txtHeader = 'L\'OURSE est la monnaie locale citoyenne complémentaire, sociale et solidairedu Pays de Questembert à celui de Férel.';
 
 require_once('composants/header.php');
 ?>
 <section class="container_accueil">
     <div class="items_adherer">
+        <h2>Particulier</h2>
         <p class="txt_adherer">Vous souhaitez des renseignement concernant l'adhésion à l'association et utiliser l'OURSE au quotidien ?</p>
         <a class="links_adherer" href="/l-ourse/pages/particulier.php">Adhérer</a>
     </div>
     <div class="items_adherer">
+        <h2>Prestataire</h2>
         <p class="txt_adherer">Vous souhaitez des renseignement pour accepter les OURSES dans vos moyens de paiement et soutenir l'économie locale ?</p>
         <a class="links_adherer" href="/l-ourse/pages/prestataire.php">Adhérer</a>
     </div>

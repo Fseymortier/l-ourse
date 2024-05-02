@@ -2,91 +2,77 @@
 
 class User
 {
-
     private $db;
 
     function __construct($conn)
-    { 
-        $this->db=$conn;
+    {
+        $this->db = $conn;
     }
 
-    public function Password($user,$password)
+    public function Password($user, $password)
     {
-        try
-        {
+        try {
             $password_encypt = password_hash($password, PASSWORD_DEFAULT);
-            $sql= "select ID, Nom, Email, Password,Compte FROM compte where Email = :email" ;
-            $stmt =$this->db->prepare($sql);
+            $sql = "select ID, Nom, Email, Password,Compte FROM compte where Email = :email";
+            $stmt = $this->db->prepare($sql);
             $stmt->bindParam(':user', $user);
             $stmt->bindParam(':mdp', $password);
             $stmt->execute();
             $resultat = $stmt->fetch();
-            if($resultat)
-            {
-                
+            if ($resultat) {
             }
-        }
-        catch (PDOException $e) {
+        } catch (PDOException $e) {
             echo $e->getMessage();
             return false;
         }
     }
 
-    Public function GetUserbyUser($user)
+    public function GetUserbyUser($user)
     {
         $sql = "SELECT COUNT(*) AS count FROM compte WHERE user = :user";
-        $stmt =$this->db->prepare($sql);
+        $stmt = $this->db->prepare($sql);
         $stmt->bindParam(':email', $user);
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($result['count'] > 0) {
-            echo"'<div class=alert alert-success'>L'email est déjà utilisé.</div>'";
-        }  else {
+            echo "'<div class=alert alert-success'>L'email est déjà utilisé.</div>'";
+        } else {
             return $result;
+        }
     }
-}
 
-public function InsertUser($user,$email,$password,$compte)
-{
-        try
-        {
-            $res=$this->GetUserbyUser($user);
-            if($res['count']>0)
-            {
+    public function InsertUser($user, $email, $password)
+    {
+        try {
+            $res = $this->GetUserbyUser($user);
+            if ($res['count'] > 0) {
                 return false;
-            }
-            else{
-                $sql="INSERT INTO `compte`(`USER`,`MDP`,`ADRCOMPTE`,`TYPECOMPTE`)VALUES(:user,:email:compte,:`password`)";
-                $stmt =$this->db->prepare($sql);
+            } else {
+                $sql = "INSERT INTO `compte`(`USER`,`MDP`,`ADRCOMPTE`,`TYPECOMPTE`)VALUES(:user,:email:compte,:`password`)";
+                $stmt = $this->db->prepare($sql);
                 $stmt->bindParam(':user', $user);
                 $stmt->bindParam(':email', $email);
                 $stmt->bindParam(':password', $password);
-                $stmt->bindParam(':compte', $compte);
-    
+
                 $stmt->execute();
                 return true;
             }
-
-           
-        
-        }catch (PDOException $e) {
+        } catch (PDOException $e) {
             echo $e->getMessage();
             return false;
-
         }
+    }
+    // funtion to return all users form rese bd
+    public function getUsers()
+    {
+        try {
+            $sql = "SELECT * FROM compte";
+            $result = $this->db->query($sql);
+            return $result;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
 }
- // funtion to return all users form rese bd
- public function getUsers()
- {
-     try {
-         $sql = "SELECT * FROM compte";
-         $result = $this->db->query($sql);
-         return $result;
-     } catch (PDOException $e) {
-         echo $e->getMessage();
-         return false;
-     }
- }
-}
-?>
