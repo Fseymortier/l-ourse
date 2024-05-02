@@ -12,7 +12,7 @@ require_once('../composants/session.php');
     <input type="email" id="form2Example11" name="email" class="form-control" placeholder=" email address" />
     <label class="form-label" for="form2Example22">Password:</label>
     <input type="password" id="form2Example22" name="password" class="form-control" />
-    <input type="submit" value="Connexion" class="button_form button_form_connexion">
+    <input type="submit" value="Connexion" class="button_form button_connexion">
   <a href="/l-ourse/pages/s-inscrire.php" class="button_form button_sincrire">S'inscrire</a>
   </form>
 </section>

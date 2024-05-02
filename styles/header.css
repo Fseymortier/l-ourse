@@ -24,7 +24,6 @@ a{
     justify-content: space-around;
     align-items: center;
     background-color: #CBCB83;
-    text-align: justify;
     padding: 2em 1em;
     margin-top: 8.5em;
 }
@@ -58,4 +57,5 @@ h1{
     width: 20%;
     max-width: 15em;
     min-width: 10em;
+    align-self: center;
 }

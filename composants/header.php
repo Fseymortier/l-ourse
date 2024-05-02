@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/l-ourse/styles/footer.css">
     <link rel="stylesheet" href="/l-ourse/styles/carte.css">
     <link rel="stylesheet" href="/l-ourse/styles/contact.css">
+    <link rel="stylesheet" href="/l-ourse/styles/campagne.css">
 </head>
 
 <body>

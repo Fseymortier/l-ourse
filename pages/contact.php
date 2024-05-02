@@ -12,7 +12,7 @@ require_once('../composants/header.php');
         <label for="mail">Email <span class="stars_form">*</span></label><input class="saisie" type="email" name="mail" id="mail" required />
         <label for="objet">Sujet de votre prise de contact <span class="stars_form">*</span></label><input class="saisie" type="text" name="objet" id="objet" required />
         <label for="message">Message <span class="stars_form">*</span></label><textarea type="textarea" name="message" id="message" required></textarea>
-        <input type="submit" value="Envoyer" class="button_form">
+        <input type="submit" value="Envoyer" class="button_form button_connexion">
     </form>
 </section>
 <?php require_once('../composants/footer.php') ?>

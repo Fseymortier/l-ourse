@@ -37,7 +37,7 @@ require_once('../composants/header.php');
             <h3>Adhérer</h3>
             <p>Vous y trouverez les bulletins d'inscriptions à remplir et à donner au comptoir d'échange. Les bénévoles de l'Ourse viendront récupérer votre bulletin et vous recontacteront pour réaliser votre carte d'adhérent. Vous pouvez pré-remplir votre adhésion en imprimant ce <a class="colored_txt" href="/l-ourse/documents/FORMAdhmodDef.pdf">bulletin d'adhésion téléchargeable</a></p>
             <h3>Renouveler son adhésion</h3>
-            <p>.</p>
+            <p></p>
             <h3>Echanger</h3>
             <p>C'est ici que vous pourrez échanger vos Euros en monnaie locale.</p>
             <h3>Il y a forcement un comptoir d'échange proche de chez vous :</h3>
