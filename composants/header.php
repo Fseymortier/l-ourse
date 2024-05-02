@@ -11,6 +11,8 @@
     <link rel="stylesheet"  href="/l-ourse/styles/index.css">
     <link rel="stylesheet"  href="/l-ourse/styles/adherer.css">
     <link rel="stylesheet"  href="/l-ourse/styles/footer.css">
+    <link rel="stylesheet"  href="/l-ourse/styles/carte.css">
+    <link rel="stylesheet"  href="/l-ourse/styles/contact.css">
 </head>
 
 <body>

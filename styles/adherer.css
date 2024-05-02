@@ -7,6 +7,7 @@
     margin-top: 3em;
 }
 .container_item_adherer{
+    width: 90%;
     max-width: 50em;
     margin: 2em 1em;
     border-radius: 2em;

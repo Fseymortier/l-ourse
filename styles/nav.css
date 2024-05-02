@@ -26,6 +26,10 @@ nav{
     display: block;
     border-bottom: 3px solid white ;
 }
+.selected{    
+    color: var(--violet);
+    border-bottom: 3px solid var(--violet);
+}
 .nav_link:hover{
     color: var(--violet);
     border-bottom: 3px solid var(--violet);

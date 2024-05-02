@@ -1,0 +1,27 @@
+form{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+.champ_obligatoire{
+    margin: 1em 0;
+    font-size: 1.5em;
+}
+label{
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+input,textarea{
+    height: 3em;
+    border: 2px solid var(--violet);
+    margin-bottom: 1em;
+}
+.button_form{
+    width: 10em;
+    font-size: 1.3em;
+    color: white;
+    background-color: var(--violet);
+    border-radius: 2em;
+    margin: 1em 0;
+}
