@@ -38,6 +38,7 @@ a{
 .txt_header{
     max-width: 28em;
     font-size: 1.2em;
+    margin-top: 1em;
 }
 .colored_txt_header,.colored_txt{
     font-size: 1em;

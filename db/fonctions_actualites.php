@@ -87,7 +87,7 @@ class Actualites
     public function getAllACTU()
     {
         try {
-            $sql = "SELECT *, DATE_FORMAT(DATEACTU, '%d/%m/%Y') AS formatted_date FROM `actu`";
+            $sql = "SELECT *, DATE_FORMAT(DATEACTU, '%d/%m/%Y') AS formatted_date FROM `actu` ORDER BY DATEACTU DESC";
             $result = $this->db->query($sql);
             return $result->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {

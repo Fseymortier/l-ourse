@@ -9,8 +9,7 @@ footer{
     border-top: 1px solid var(--jaune);
 }
 .icone_facebook{
-    width: 10%;
-    min-width: 5em;
+    width: 5em;
     align-self: center;
 }
 .item_footer{

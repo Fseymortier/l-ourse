@@ -4,6 +4,22 @@
     justify-content: space-around;
     margin: 2em 0;
 }
+.item_ajouter_actus{
+    width: 100%;
+    text-align: center;
+    margin: 1em 0;
+}
+.link_ajouter_actus,.supprimer_actus{
+    height: 4em;
+    display: inline-block;
+    cursor: pointer;
+    align-content: center;
+    padding: 1em;
+    margin: 0 auto;
+    border-radius: 2em;
+    color: white;
+    background-color: var(--violet);
+}
 .item_actu{
     width: 30%;
     min-width: 18em;
