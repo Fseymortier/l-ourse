@@ -36,7 +36,7 @@ class User
     {
         $sql = "SELECT COUNT(*) AS count FROM compte WHERE user = :user";
         $stmt =$this->db->prepare($sql);
-        $stmt->bindParam(':user', $user);
+        $stmt->bindParam(':email', $user);
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -45,6 +45,7 @@ class User
         }  else {
             return $result;
     }
+
 }
 
 public function InsertUser($user,$email,$password)
@@ -57,7 +58,7 @@ public function InsertUser($user,$email,$password)
                 return false;
             }
             else{
-                $sql="INSERT INTO `compte`(`USER`,`MDP`,`ADRCOMPTE`)VALUES(:user,:MDP,:email)";
+                $sql="INSERT INTO `compte`(`USER`,`MDP`,`ADRCOMPTE`,`TYPCOMPTE`)VALUES(:user,:MDP,:email,NULL)";
                 $stmt =$this->db->prepare($sql);
                 $stmt->bindParam(':user', $user);
                 $stmt->bindParam(':MDP', $password);
@@ -66,13 +67,9 @@ public function InsertUser($user,$email,$password)
                 $stmt->execute();
                 return true;
             }
-
-           
-        
         }catch (PDOException $e) {
             echo $e->getMessage();
             return false;
-
         }
 }
  // funtion to return all users form rese bd
