@@ -3,8 +3,8 @@ $title = 'Connexion';
 $h1 = 'Connexion';
 $txtHeader = 'Bon retour parmis nous !';
 
-require_once('../db/conn.php');
-require_once('../db/User.php');
+require_once('../db/db_config.php');
+require_once('../db/fonctions_user.php');
 
 $userObject = new User($pdo);
 
@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     session_start();
     $_SESSION['user'] = $userData;
     if (isset($_SESSION['user'])) {
-      //header('Location: ../index.php');
+      header('Location: /l-ourse');
     }
   }
 }

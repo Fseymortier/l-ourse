@@ -77,7 +77,7 @@ class User
             return false;
         }
     }
-
+    
     // funtion to return all users form rese bd
     public function getUsers()
     {

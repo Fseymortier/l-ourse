@@ -1,3 +1,11 @@
+<?php
+// Vérifier si l'utilisateur a cliqué sur "Se déconnecter"
+if(isset($_GET['logout'])) {
+    session_destroy();
+    header('Location: /l-ourse');
+    exit();
+}
+?>
 <nav>
     <img class="logo_nav" src="/l-ourse/images/ourse2.webp" alt="icone l'ourse">
     <div class="container_menu">
@@ -27,7 +35,7 @@
             <a class="nav_link" href="/l-ourse/pages/profil.php">Profil</a>
         </div>
         <div class="item_menu">
-            <a class="nav_link" href="#">Se déconnecter</a>
+            <a class="nav_link" href="?logout=1">Se déconnecter</a>
         </div>
     </div>
 </nav>

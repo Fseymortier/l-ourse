@@ -3,8 +3,8 @@ $title = 'S\'inscrire';
 $h1 = 'S\'inscrire';
 $txtHeader = 'Inscrivez-vous pour nous rejoindre !';
 require_once('../composants/header.php');
-require_once('../db/conn.php');
-require_once('../db/User.php');
+require_once('../db/db_config.php');
+require_once('../db/fonctions_user.php');
 
 if (isset($_POST['submit'])) {
   $user = $_POST['user'];
