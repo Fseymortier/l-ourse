@@ -56,3 +56,8 @@ a{
     min-width: 10em;
     align-self: center;
 }
+@media screen and (max-width: 1044px) {
+    .container_entete{
+        margin-top: 11em;
+    }
+}

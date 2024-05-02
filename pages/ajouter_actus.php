@@ -1,18 +1,44 @@
 <?php
-$title = "Ajout d'ctualités";
+$title = "Ajout d'actualités";
 $h1 = "Ajout d'actualités";
 $txtHeader = "Qu'est ce qu'il y a au programme aujourd'hui ?";
 require_once('../composants/header.php');
+
+if (isset($_POST['submit'])) {
+    $titreActu = $_POST['titre'];
+    $imgActu = $_POST['image'];
+    $descActu = $_POST['description'];
+    $dateActu = $_POST['date'];
+    $villeActu = $_POST['ville'];
+    $result = $User->insertACTU($titreActu, $imgActu, $descActu,$dateActu,$villeActu);
+    if ($result == true) {
+      $error_message = 'Actualité ajoutée';
+      $isValide = true;
+    } else {
+      $error_message = "Un problème est survenue lors de l'ajout";
+      $isValide = false;
+    }
+  }
 ?>
 
 <section class="container_actu">
 <?php if (isset($_SESSION['user'])) :?>
    <form action="" method="POST" enctype="multipart/form-data">
-    <label for="">Titre de l'actualité</label>
+   <?php
+    // Afficher le message d'erreur s'il existe
+    if (isset($isValide)) {
+      if ($isValide === false) {
+        echo "<p class='txt_error'>$error_message</p>";
+      } else {
+        echo "<p class='txt_validate'>$error_message</p>";
+      }
+    }
+    ?>
+    <label for="titre">Titre de l'actualité</label>
     <input type="text" name="titre" id="titre">
     <label for="image">Image de l'actualité</label>
     <input type="file" name="image" id="image">
-    <label for="">Description de l'actualité</label>
+    <label for="description">Description de l'actualité</label>
     <textarea type="text" name="description" id="description"></textarea>
     <label for="date">Date de l'actualité</label>
     <input type="date">

@@ -30,7 +30,6 @@ class Actualites
          $stmt->bindparam(':imgActu', $imgActu);
          $stmt->bindparam(':descActu', $descActu);
          $stmt->bindparam(':dateActu', $dateActu);
-         $stmt->bindparam(':villeActu', $villeActu);
         
           // execute statement
           $stmt->execute();
@@ -51,8 +50,7 @@ class Actualites
             imgActu          =?,
             descActu      =?,
             dateActu      =?, 
-            villeActu        =?, 
-            lienActu        =?,            
+            villeActu        =?,            
             WHERE 
             NOACTU           =?";
             $stmt = $this->db->prepare($sql);
@@ -60,8 +58,7 @@ class Actualites
          $stmt->bindparam(':imgActu', $imgActu);
          $stmt->bindparam(':descActu', $descActu);
          $stmt->bindparam(':dateActu', $dateActu);
-         $stmt->bindparam(':villeActu', $villeActu);
-         $stmt->bindparam(':lienActu', $lienActu);*/
+         $stmt->bindparam(':villeActu', $villeActu);*/
             // execute statement
             $stmt->execute($param);
             return true;

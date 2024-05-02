@@ -15,6 +15,7 @@ nav{
 .container_menu{   
     width: 90%; 
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     padding: 1em;
 }

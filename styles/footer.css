@@ -32,3 +32,10 @@ footer{
 .icone_facebook,.item_footer,.logo_footer{
     margin: 0.5em 0;
 }
+
+@media screen and (max-width: 545px) {
+    footer{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+}
