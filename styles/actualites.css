@@ -9,7 +9,13 @@
     text-align: center;
     margin: 1em 0;
 }
+.supprimer_actus{
+    width: 100%;
+    max-width: 15em;
+    font-weight: bold;
+}
 .link_ajouter_actus,.supprimer_actus{
+    text-decoration: none;
     height: 4em;
     display: inline-block;
     cursor: pointer;
@@ -19,6 +25,10 @@
     border-radius: 2em;
     color: white;
     background-color: var(--violet);
+    transition: transform ease-in-out 0.5s;
+}
+.link_ajouter_actus,.supprimer_actus:hover{
+    transform: scale(1.1);
 }
 .item_actu{
     width: 30%;
