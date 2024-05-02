@@ -31,7 +31,7 @@ class crud
          $stmt->bindparam(':descActu', $descActu);
          $stmt->bindparam(':dateActu', $dateActu);
          $stmt->bindparam(':villeActu', $villeActu);
-         $stmt->bindparam(':lienActu', $lienActu);
+        
           // execute statement
           $stmt->execute();
           return true;
