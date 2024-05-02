@@ -48,3 +48,6 @@ textarea{
 .button_sincrire:hover{
     border: 2px solid var(--violet);
 }
+.txt_error{
+    text-align: center;
+}

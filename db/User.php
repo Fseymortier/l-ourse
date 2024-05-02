@@ -2,7 +2,6 @@
 
 class User
 {
-
     private $db;
 
     function __construct($conn)
@@ -40,8 +39,9 @@ class User
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($result['count'] > 0) {
-            echo"'<div class=alert alert-success'>L'email est déjà utilisé.</div>'";
+        if ($result) {
+            
+            return "L'email est déjà utilisé !";
         }  else {
             return $result;
     }
@@ -52,7 +52,7 @@ public function InsertUser($user,$email,$password)
         try
         {
             $res=$this->GetUserbyUser($user);
-            if($res['count']>0)
+            if($res)
             {
                 return false;
             }
