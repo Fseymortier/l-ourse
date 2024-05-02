@@ -10,6 +10,9 @@
 body{
     font-family: 'typo';
 }
+p{    
+    font-size: 1.2em;
+}
 a{
     text-decoration: none;
     color: unset;
@@ -21,7 +24,6 @@ a{
     justify-content: space-around;
     align-items: center;
     background-color: #CBCB83;
-    text-align: justify;
     padding: 2em 1em;
     margin-top: 8.5em;
 }
@@ -42,7 +44,7 @@ h1{
     font-size: 1.2em;
 }
 .colored_txt_header,.colored_txt{
-    font-size: 1.1em;
+    font-size: 1em;
     font-weight: bold;
 }
 .colored_txt_header{    
@@ -55,4 +57,5 @@ h1{
     width: 20%;
     max-width: 15em;
     min-width: 10em;
+    align-self: center;
 }

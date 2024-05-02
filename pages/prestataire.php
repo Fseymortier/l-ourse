@@ -18,7 +18,7 @@ require_once('../composants/header.php');
         <h2 class="titles_adherer title_jaune">Communiquer entre prestataires</h2>
         <div class="item_adherer">
             <p>Je souhaite discuter entre prestataires pour améliorer la circulation de notre monnaie sur le territoire, ou pour tout autre chose...</p>
-            <p>Vous pouvez rejoindre le <a href="https://t.me/joinchat/M_MSehrHdXA-awj716j0Bw" class='colored_txt'>groupe Prestataires de l'Ourse</a> dans la messagerie Telegram et les salons d'échange écrit et vocal dans notre serveur <a href="https://discord.com/invite/9vWGGTs"  class='colored_txt'>Discord.</a></p>
+            <p>Vous pouvez rejoindre le <a href="https://t.me/joinchat/M_MSehrHdXA-awj716j0Bw" class='colored_txt'>groupe Prestataires de l'Ourse</a> dans la messagerie Telegram et les salons d'échange écrit et vocal dans notre serveur <a href="https://discord.com/invite/9vWGGTs" class='colored_txt'>Discord.</a></p>
         </div>
     </div>
     <div class="container_item_adherer container_item_jaune">

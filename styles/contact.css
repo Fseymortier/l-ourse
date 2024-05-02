@@ -18,10 +18,25 @@ input,textarea{
     margin-bottom: 1em;
 }
 .button_form{
-    width: 10em;
+    cursor: pointer;
+    text-align: center;
+    align-content: center;
+    height: 3em;
     font-size: 1.3em;
-    color: white;
-    background-color: var(--violet);
     border-radius: 2em;
     margin: 1em 0;
+    transition: all ease-in-out 0.5s;
+}
+.button_connexion{
+    color: white;
+    background-color: var(--violet);
+}
+.button_connexion:hover{
+    transform: scale(1.05);
+}
+.button_sincrire{
+    color: var(--violet);
+}
+.button_sincrire:hover{
+    border: 2px solid var(--violet);
 }

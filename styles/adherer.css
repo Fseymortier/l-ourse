@@ -8,7 +8,7 @@
 }
 .container_item_adherer{
     width: 90%;
-    max-width: 50em;
+    max-width: 70em;
     margin: 2em 1em;
     border-radius: 2em;
     align-content: center;
@@ -24,6 +24,8 @@
 }
 .item_adherer{
     width: 90%;
+    display: flex;
+    flex-direction: column;
     margin: 1em 0;
 }
 .item_adherer>p{
@@ -34,6 +36,7 @@ ul{
 }
 li{
     padding-left: 1.5em;
+    margin: 0.5em 0;
 }
 .titles_adherer{
     width: 100%;

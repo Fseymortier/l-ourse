@@ -26,10 +26,11 @@ require_once('composants/header.php');
     <div class="container_contributeur">
         <p class="txt_contributeur">Pour y contribuer, rejoignez nous en vous inscrivant auprès du comptoir d'échange le plus proche de chez vous :</p>
         <div class="item_contributeur">
-            <p class="contributeur">- Questembert : <span class='colored_txt'>Halle Terre Native</span></p>
-            <p class="contributeur">- Muzillac / Ambon : <span class='colored_txt'>Biocoop Le Panier Bio</span></p>
-            <p class="contributeur">- Nivillac : <span class='colored_txt'>O'Val en Vert</span></p>
-            <p class="contributeur">- La Roche-Bernard : <span class='colored_txt'>La Petite Banquise</span></p>
+            <p class="contributeur">- Questembert : <a class="colored_txt" href="https://www.facebook.com/halleterrenative/">Halle Terre Native</a></p>
+            <p class="contributeur">- Muzillac / Ambon : <a class="colored_txt" href="https://www.biocooplepanierbio.com/">Biocoop Le Panier Bio</a></p>
+            <p class="contributeur">- Nivillac : <a class="colored_txt" href="https://ovalenvert.fr/">O'Val en Vert</a></p>
+            <p class="contributeur">- La roche-Bernard : <a class="colored_txt" href="https://www.lapetitebanquise.fr/">La Petite Banquise</a></p>
+            <p class="contributeur">- Damgan : <a class="colored_txt" href="https://www.lesbijouxmarine.fr/">Les Bijoux Marine</a></p>
         </div>
     </div>
 </section>

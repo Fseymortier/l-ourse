@@ -23,6 +23,7 @@
 }
 .links_adherer{
     display: inline-block;
+    text-align: center;
     width: 8em;
     font-size: 1.3em;
     text-decoration: none;
@@ -31,6 +32,11 @@
     border-radius: 1em;
     margin: 2em 0;
     padding: 0.5em 1em;
+    box-shadow: 5px 10px 7px gray;
+    transition: transform ease-in-out 0.5s;
+}
+.links_adherer:hover{
+    transform: scale(1.2);
 }
 .item_txt_presentation{
     text-align: center;
