@@ -10,18 +10,20 @@ class User
         $this->db=$conn;
     }
 
-    public function Password($user)
+    public function Password($user,$password)
     {
         try
         {
+            $password_encypt = password_hash($password, PASSWORD_DEFAULT);
             $sql= "select ID, Nom, Email, Password,Compte FROM compte where Email = :email" ;
             $stmt =$this->db->prepare($sql);
-            $stmt->bindParam(':email', $user);
+            $stmt->bindParam(':user', $user);
+            $stmt->bindParam(':mdp', $password);
             $stmt->execute();
             $resultat = $stmt->fetch();
             if($resultat)
             {
-                return $resultat;
+                
             }
         }
         catch (PDOException $e) {
@@ -30,11 +32,11 @@ class User
         }
     }
 
-    Public function GetUserbyEmail($email)
+    Public function GetUserbyUser($user)
     {
-        $sql = "SELECT COUNT(*) AS count FROM compte WHERE email = :email";
+        $sql = "SELECT COUNT(*) AS count FROM compte WHERE user = :user";
         $stmt =$this->db->prepare($sql);
-        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':email', $user);
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -45,19 +47,19 @@ class User
     }
 }
 
-public function InsertUser($nom,$email,$password,$compte)
+public function InsertUser($user,$email,$password,$compte)
 {
         try
         {
-            $res=$this->GetUserbyEmail($email);
+            $res=$this->GetUserbyUser($user);
             if($res['count']>0)
             {
                 return false;
             }
             else{
-                $sql="SELECT INTO `compte`(`Nom`,`Email`,`Compte`,`Password`)VALUES(:nom,:email:compte,:`password`)";
+                $sql="INSERT INTO `compte`(`USER`,`MDP`,`ADRCOMPTE`,`TYPECOMPTE`)VALUES(:user,:email:compte,:`password`)";
                 $stmt =$this->db->prepare($sql);
-                $stmt->bindParam(':nom', $nom);
+                $stmt->bindParam(':user', $user);
                 $stmt->bindParam(':email', $email);
                 $stmt->bindParam(':password', $password);
                 $stmt->bindParam(':compte', $compte);
@@ -74,5 +76,17 @@ public function InsertUser($nom,$email,$password,$compte)
 
         }
 }
+ // funtion to return all users form rese bd
+ public function getUsers()
+ {
+     try {
+         $sql = "SELECT * FROM compte";
+         $result = $this->db->query($sql);
+         return $result;
+     } catch (PDOException $e) {
+         echo $e->getMessage();
+         return false;
+     }
+ }
 }
 ?>
