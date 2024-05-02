@@ -32,11 +32,11 @@ class User
         }
     }
 
-    Public function GetUserbyEmail($email)
+    Public function GetUserbyUser($user)
     {
-        $sql = "SELECT COUNT(*) AS count FROM compte WHERE email = :email";
+        $sql = "SELECT COUNT(*) AS count FROM compte WHERE user = :user";
         $stmt =$this->db->prepare($sql);
-        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':email', $user);
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -47,19 +47,19 @@ class User
     }
 }
 
-public function InsertUser($nom,$email,$password,$compte)
+public function InsertUser($user,$email,$password,$compte)
 {
         try
         {
-            $res=$this->GetUserbyEmail($email);
+            $res=$this->GetUserbyUser($user);
             if($res['count']>0)
             {
                 return false;
             }
             else{
-                $sql="SELECT INTO `compte`(`Nom`,`Email`,`Compte`,`Password`)VALUES(:nom,:email:compte,:`password`)";
+                $sql="INSERT INTO `compte`(`USER`,`MDP`,`ADRCOMPTE`,`TYPECOMPTE`)VALUES(:user,:email:compte,:`password`)";
                 $stmt =$this->db->prepare($sql);
-                $stmt->bindParam(':nom', $nom);
+                $stmt->bindParam(':user', $user);
                 $stmt->bindParam(':email', $email);
                 $stmt->bindParam(':password', $password);
                 $stmt->bindParam(':compte', $compte);
