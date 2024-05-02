@@ -1,5 +1,5 @@
 <?php
-class crud
+class Actualites
 {
     // private database object\
     private $db;
@@ -87,9 +87,9 @@ class crud
     public function getAllACTU()
     {
         try {
-            $sql = "SELECT * FROM actu ";
+            $sql = "SELECT *, DATE_FORMAT(DATEACTU, '%d/%m/%Y') AS formatted_date FROM `actu`";
             $result = $this->db->query($sql);
-            return $result;
+            return $result->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
             echo $e->getMessage();
             return false;
