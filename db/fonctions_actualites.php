@@ -21,7 +21,6 @@ class Actualites
         try
         {
             // define sql statement to be executed
-<<<<<<< Updated upstream
             $sql = "INSERT INTO `actu`(`TITREACTU`,`IMGACTU`,`DESCACTU`, `DATEACTU`,`VILLEACTU`) VALUES (:titreActu, :imgActu, :descActu, :dateActu, :villeActu)";
             //prepare the sql statement for execution
             $stmt = $this->db->prepare($sql);
@@ -35,20 +34,6 @@ class Actualites
             // execute statement
             $stmt->execute();
             return true;
-=======
-         $sql = "INSERT INTO `actu`(`TITREACTU`,`IMGACTU`,`DESCACTU`,`DATEACTU`,`VILLEACTU` VALUES (:titreActu, :imgActu, :descActu, :dateActu, :villeActu)";
-         //prepare the sql statement for execution
-         $stmt = $this->db->prepare($sql);
-         // bind all placeholders to the actual values
-         $stmt->bindparam(':titreActu', $titreActu);
-         $stmt->bindparam(':imgActu', $imgActu);
-         $stmt->bindparam(':descActu', $descActu);
-         $stmt->bindparam(':dateActu', $dateActu);
-         $stmt->bindparam(':villeActu', $villeActu);
-          // execute statement
-          $stmt->execute();
-          return true;
->>>>>>> Stashed changes
         }
         catch (PDOException $e) {
             echo $e->getMessage();
@@ -85,18 +70,34 @@ class Actualites
     }
 
     public function deleteActu($id)
-    {
-        try {
-            $sql = "DELETE FROM `actu` WHERE NOACTU=:id";
-            $stmt = $this->db->prepare($sql);
-            $stmt->bindparam(':id', $id);
-            $stmt->execute();
-            return true;
-        } catch (PDOException $e) {
-            echo $e->getMessage();
-            return false;
-        }
+{
+    try {
+        // Récupérer le chemin de l'image à partir de la base de données
+        $sql = "SELECT IMGACTU FROM `actu` WHERE NOACTU=:id";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+        $imagePath = $stmt->fetchColumn();
+
+        // Supprimer l'entrée dans la base de données
+        $sql = "DELETE FROM `actu` WHERE NOACTU=:id";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+
+        // Supprimer l'image du dossier "images/actualites"
+        if (file_exists($imagePath)) {
+            // Supprimer l'image du dossier "images/actualites"
+            unlink($imagePath);
+        } 
+
+        return true;
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+        return false;
     }
+}
+
     public function getAllACTU()
     {
         try {

@@ -50,42 +50,6 @@ class User
             return $result;
         }
     }
-    public function getUsersbyUSERS($id)
-    {
-        try 
-        {$sql="SELECT`ID`,`USER`,`MDP`,`ADRCOMPTE` FROM compte where Id=:id";
-            $stmt = $this->db->prepare($sql);
-            $stmt->bindparam(':id', $id);
-            $stmt->execute();
-            $result = $stmt->fetch(PDO::FETCH_ASSOC);
-            return $result;
-        }   
-        catch(PDOException $e) {
-            echo $e->getMessage();
-            return false;
-        }
-    }
-    
-
-    public function EditUser($param)
-    {
-        try
-        {
-            $sql = "UPDATE `compte` SET
-            USER     =?,
-                MDP      =?,
-                ADRCOMPTE          =?,
-                WHERE 
-                  ID         =?";
-            $stmt = $this->db->prepare($sql);
-            $stmt->execute($param);
-            return true;    
-        }
-        catch(PDOException $e) {
-            echo $e->getMessage();
-            return false;
-        }
-    }
 
     public function Register($user, $email, $password)
     {

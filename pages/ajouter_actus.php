@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
   $titreActu = $_POST['titre'];
   $imgArray = $_FILES['image'];
   $imgName = $imgArray['name'];
-  $imgActu= '/l-ourse/images/actualites' . $imgName;
+  $imgActu= '../images/actualites' . $imgName;
   $imgTmpName = $imgArray['tmp_name'];
 
   // Chemin d'accès au dossier de destination
@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
   // Déplacer le fichier téléchargé vers le dossier de destination
   if (move_uploaded_file($imgTmpName, $destination)) {
       // Si le déplacement réussit, tu peux utiliser $destination comme chemin d'accès dans ta base de données
-      $imgActu = '/l-ourse/images/actualites/' . $imgName;
+      $imgActu = '../images/actualites/' . $imgName;
   } else {
       // En cas d'erreur lors du déplacement du fichier, affiche un message d'erreur
       $error_message = "Une erreur s'est produite lors du téléchargement de l'image.";
@@ -54,7 +54,6 @@ if (isset($_POST['submit'])) {
           echo "<p class='txt_validate'>$error_message</p>";
         }
       }
-<<<<<<< Updated upstream
       ?>
       <label for="titre">Titre de l'actualité</label>
       <input type="text" name="titre" id="titre" required>
@@ -69,23 +68,6 @@ if (isset($_POST['submit'])) {
       <input type="submit" name="submit" value="Ajouter" class="button_form button_connexion">
     </form>
   <?php else : ?>
-=======
-    }
-    ?>
-    <label for="titre">Titre de l'actualité</label>
-    <input type="text" name="titre" id="titre">
-    <label for="image">Image de l'actualité</label>
-    <input type="file" name="image" id="image">
-    <label for="description">Description de l'actualité</label>
-    <textarea type="text" name="description" id="description"></textarea>
-    <label for="date">Date de l'actualité</label>
-    <input type="date">
-    <label for="ville">Ville</label>
-    <input type="text" name="ville" id="ville">
-    <input type="submit" name="submit" value="Ajouter" class="button_form button_connexion">
-   </form>
-<?php else : ?>
->>>>>>> Stashed changes
     <h2>Vous n'êtes pas autoriser à accéder à cette pasge</h2>
   <?php endif ?>
 </section>

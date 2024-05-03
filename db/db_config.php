@@ -2,8 +2,8 @@
 //Development Connection    
 $host = '127.0.0.1';
 $db = 'lourse';
-$user = 'stan';
-$pass = 'stan';
+$user = 'root';
+$pass = '';
 $charset = 'utf8mb4';
  
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";

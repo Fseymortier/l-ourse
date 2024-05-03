@@ -14,11 +14,12 @@ if (isset($_POST['delete'])) {
         $actu_id = $_POST['actu_id'];
         // Appelle la fonction deleteActu pour supprimer l'actualité
         $result = $actus->deleteActu($actu_id);
+        var_dump($result);
         if ($result === true) {
             // Affiche un message de confirmation
             echo "Actualité supprimée avec succès.";
             // Rafraîchit la page pour refléter les changements
-            header("Refresh:0");
+            //header("Refresh:0");
         } else {
             echo "Une erreur s'est produite lors de la suppression de l'actualité.";
         }
