@@ -15,31 +15,32 @@ class Actualites
         $imgActu,
         $descActu,
         $dateActu,
-        $villeActu,
-        $lienActu,
+        $villeActu
     )
     {
         try
         {
             // define sql statement to be executed
-         $sql = "INSERT INTO `actu`(`TITREACTU`,`IMGACTU`,`DESCACTU`,`DATEACTU`,`VILLEACTU` VALUES (:titreActu, :imgActu, :descActu, :dateActu, :villeActu)";
-         //prepare the sql statement for execution
-         $stmt = $this->db->prepare($sql);
-         // bind all placeholders to the actual values
-         $stmt->bindparam(':titreActu', $titreActu);
-         $stmt->bindparam(':imgActu', $imgActu);
-         $stmt->bindparam(':descActu', $descActu);
-         $stmt->bindparam(':dateActu', $dateActu);
-        
-          // execute statement
-          $stmt->execute();
-          return true;
+            $sql = "INSERT INTO `actu`(`TITREACTU`,`IMGACTU`,`DESCACTU`, `DATEACTU`,`VILLEACTU`) VALUES (:titreActu, :imgActu, :descActu, :dateActu, :villeActu)";
+            //prepare the sql statement for execution
+            $stmt = $this->db->prepare($sql);
+            // bind all placeholders to the actual values
+            $stmt->bindparam(':titreActu', $titreActu);
+            $stmt->bindparam(':imgActu', $imgActu);
+            $stmt->bindparam(':descActu', $descActu);
+            $stmt->bindparam(':dateActu', $dateActu);
+            $stmt->bindparam(':villeActu', $villeActu);
+            
+            // execute statement
+            $stmt->execute();
+            return true;
         }
         catch (PDOException $e) {
             echo $e->getMessage();
             return false;
         }
     }
+    
 
     public function editActu($param)
     {

@@ -14,7 +14,7 @@ $allActus = $actus->getAllACTU();
     <?php if (isset($_SESSION['user'])) {
     ?>
         <div class="item_ajouter_actus">
-            <a class="link_ajouter_actus" href="/l-ourse/pages/ajouter_actus">Ajouter des actualités</a>
+            <a class="link_ajouter_actus" href="/l-ourse/pages/ajouter_actus.php">Ajouter des actualités</a>
         </div>
     <?php } ?>
     <?php foreach ($allActus as $index => $actu) : ?>
