@@ -21,6 +21,7 @@ class Actualites
         try
         {
             // define sql statement to be executed
+<<<<<<< Updated upstream
             $sql = "INSERT INTO `actu`(`TITREACTU`,`IMGACTU`,`DESCACTU`, `DATEACTU`,`VILLEACTU`) VALUES (:titreActu, :imgActu, :descActu, :dateActu, :villeActu)";
             //prepare the sql statement for execution
             $stmt = $this->db->prepare($sql);
@@ -34,6 +35,20 @@ class Actualites
             // execute statement
             $stmt->execute();
             return true;
+=======
+         $sql = "INSERT INTO `actu`(`TITREACTU`,`IMGACTU`,`DESCACTU`,`DATEACTU`,`VILLEACTU` VALUES (:titreActu, :imgActu, :descActu, :dateActu, :villeActu)";
+         //prepare the sql statement for execution
+         $stmt = $this->db->prepare($sql);
+         // bind all placeholders to the actual values
+         $stmt->bindparam(':titreActu', $titreActu);
+         $stmt->bindparam(':imgActu', $imgActu);
+         $stmt->bindparam(':descActu', $descActu);
+         $stmt->bindparam(':dateActu', $dateActu);
+         $stmt->bindparam(':villeActu', $villeActu);
+          // execute statement
+          $stmt->execute();
+          return true;
+>>>>>>> Stashed changes
         }
         catch (PDOException $e) {
             echo $e->getMessage();

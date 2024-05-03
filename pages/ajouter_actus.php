@@ -54,6 +54,7 @@ if (isset($_POST['submit'])) {
           echo "<p class='txt_validate'>$error_message</p>";
         }
       }
+<<<<<<< Updated upstream
       ?>
       <label for="titre">Titre de l'actualité</label>
       <input type="text" name="titre" id="titre" required>
@@ -68,6 +69,23 @@ if (isset($_POST['submit'])) {
       <input type="submit" name="submit" value="Ajouter" class="button_form button_connexion">
     </form>
   <?php else : ?>
+=======
+    }
+    ?>
+    <label for="titre">Titre de l'actualité</label>
+    <input type="text" name="titre" id="titre">
+    <label for="image">Image de l'actualité</label>
+    <input type="file" name="image" id="image">
+    <label for="description">Description de l'actualité</label>
+    <textarea type="text" name="description" id="description"></textarea>
+    <label for="date">Date de l'actualité</label>
+    <input type="date">
+    <label for="ville">Ville</label>
+    <input type="text" name="ville" id="ville">
+    <input type="submit" name="submit" value="Ajouter" class="button_form button_connexion">
+   </form>
+<?php else : ?>
+>>>>>>> Stashed changes
     <h2>Vous n'êtes pas autoriser à accéder à cette pasge</h2>
   <?php endif ?>
 </section>
