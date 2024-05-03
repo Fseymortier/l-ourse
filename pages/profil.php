@@ -8,28 +8,28 @@ require_once('../db/db_config.php');
 ?>
 <section>
     <?php
-     $_SESSION['user']['id'];
-    if(!isset($_GET['id']) || !$_SESSION['user'])   {
-
-        
-    } else {
-        $id=$_GET[''];
-        $res=$User->getUsersbyUSERS($id);
-        if (isset($_POST['submit'])) 
-        {
-            $user=$_POST['user'];
-            $email=$_POST['email'];
-            $password=$_POST['passowrd'];
-            
-            $param=[
-                $user,
-                $email,
-                $password
-            ];
-            $req=$User->EditUser($param);   
-
-        }
-    }
+      var_dump($_SESSION['user']['ID']);
+      if(!isset($_GET['id']) || !$_SESSION['user'])   {
+  
+  
+      } else {
+          $id=$_GET[''];
+          $res=$User->getUsersbyUSERS($id);
+          if (isset($_POST['submit'])) 
+          {
+              $user=$_POST['user'];
+              $email=$_POST['email'];
+              $password=$_POST['passowrd'];
+  
+              $param=[
+                  $user,
+                  $email,
+                  $password
+              ];
+              $req=$User->EditUser($id,$param);
+  
+          }
+      }
     ?>
         <h2 style="text-align: center;">Edit Profile</h2>
         <form action="" method="post">

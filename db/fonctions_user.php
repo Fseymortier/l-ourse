@@ -13,7 +13,7 @@ class User
     {
         try {
             // Rechercher l'utilisateur par son nom d'utilisateur
-            $sql = "SELECT `USER`, `MDP`, `typcompt` FROM `compte` WHERE `USER` = :user";
+            $sql = "SELECT * FROM `compte` WHERE `USER` = :user";
             $stmt = $this->db->prepare($sql);
             $stmt->bindParam(':user', $user);
             $stmt->execute();
@@ -48,6 +48,47 @@ class User
             return false;
         } else {
             return $result;
+        }
+    }
+    public function getUsersbyUSERS($id)
+    {
+        try 
+        {$sql="SELECT`ID`,`USER`,`MDP`,`ADRCOMPTE` FROM compte where Id=:id";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindparam(':id', $id);
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $result;
+        }   
+        catch(PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
+    
+
+    public function EditUser($id,$param)
+    {
+        try
+        {
+            $sql = "UPDATE `compte` SET
+            USER     =?,
+                MDP      =?,
+                ADRCOMPTE          =?,
+                WHERE 
+                  ID         =?";
+            $stmt = $this->db->prepare($sql);
+            $stmt->execute($param);
+            if($stmt)
+            {
+                return true;
+                return $id;
+            }
+                
+        }
+        catch(PDOException $e) {
+            echo $e->getMessage();
+            return false;
         }
     }
 
