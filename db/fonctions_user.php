@@ -13,7 +13,7 @@ class User
     {
         try {
             // Rechercher l'utilisateur par son nom d'utilisateur
-            $sql = "SELECT `USER`, `MDP` FROM `compte` WHERE `USER` = :user";
+            $sql = "SELECT `USER`, `MDP`, `typcompt` FROM `compte` WHERE `USER` = :user";
             $stmt = $this->db->prepare($sql);
             $stmt->bindParam(':user', $user);
             $stmt->execute();

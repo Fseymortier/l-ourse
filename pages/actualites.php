@@ -2,16 +2,32 @@
 $title = 'Actualités';
 $h1 = 'Actualités';
 $txtHeader = 'Retrouvez les différentes actualités et évènements de l\'association';
-require_once('../composants/header.php');
+
 
 require_once('../db/db_config.php');
 require_once('../db/fonctions_actualites.php');
 $actus = new Actualites($pdo);
 $allActus = $actus->getAllACTU();
-
+if (isset($_POST['delete'])) {
+    // Vérifie si l'identifiant de l'actualité à supprimer est présent
+    if (isset($_POST['actu_id'])) {
+        $actu_id = $_POST['actu_id'];
+        // Appelle la fonction deleteActu pour supprimer l'actualité
+        $result = $actus->deleteActu($actu_id);
+        if ($result === true) {
+            // Affiche un message de confirmation
+            echo "Actualité supprimée avec succès.";
+            // Rafraîchit la page pour refléter les changements
+            header("Refresh:0");
+        } else {
+            echo "Une erreur s'est produite lors de la suppression de l'actualité.";
+        }
+    }
+}
+require_once('../composants/header.php');
 ?>
 <section class="container_actu">
-    <?php if (isset($_SESSION['user'])) {
+    <?php if (isset($_SESSION['user']) && $_SESSION['user']['typcompt'] === 'admin') {
     ?>
         <div class="item_ajouter_actus">
             <a class="link_ajouter_actus" href="/l-ourse/pages/ajouter_actus.php">Ajouter des actualités</a>
@@ -28,8 +44,11 @@ $allActus = $actus->getAllACTU();
                 <img src="<?= $actu['IMGACTU'] ?>" class="img_actu" alt='affiche actualité' />
                 <p class='txt_actu'><?= $actu['DESCACTU'] ?></p>
 
-                <?php if (isset($_SESSION['user'])) : ?>
-                    <input type="submit" value="Supprimer" class="supprimer_actus">
+                <?php if (isset($_SESSION['user']) && $_SESSION['user']['typcompt'] === 'admin') : ?>
+                    <form action="" method="POST">
+                        <input type="hidden" name="actu_id" value="<?= $actu['NOACTU'] ?>">
+                        <input type="submit" name="delete" value="Supprimer" class="supprimer_actus">
+                    </form>
                 <?php endif; ?>
                 </div>
             <?php endforeach; ?>
