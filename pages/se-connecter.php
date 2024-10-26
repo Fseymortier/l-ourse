@@ -33,7 +33,7 @@ require_once('../composants/header.php');
     <input type="password" id="password" name="password" required />
     <input type="submit" value="Connexion" class="button_form button_connexion">
   </form>
-  <a href="/l-ourse/pages/s-inscrire.php" class="button_form button_sincrire">S'inscrire</a>
+  <a href="/pages/s-inscrire.php" class="button_form button_sincrire">S'inscrire</a>
 </section>
 
 <?php require_once('../composants/footer.php') ?>

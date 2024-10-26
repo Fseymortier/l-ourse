@@ -9,7 +9,7 @@ require_once('../composants/header.php');
         <h2 class="titles_adherer title_violet">Comment cela fonctionne-t-il ?</h2>
         <div class="item_adherer">
             <p>Pour pouvoir vous faire payer en OURSE dans votre commerce ou autre activité, vous devez être prestataire.
-                Vous remplissez une demande d'agrément en <a href="/l-ourse/pages/prestataire.php" class="colored_txt">acceptant la charte</a>. Faisable en ligne, en <a href="https://framaforms.org/ourse-agrement-prestataire-1580908990" class="colored_txt">suivant ce lien.</a></p>
+                Vous remplissez une demande d'agrément en <a href="/pages/prestataire.php" class="colored_txt">acceptant la charte</a>. Faisable en ligne, en <a href="https://framaforms.org/ourse-agrement-prestataire-1580908990" class="colored_txt">suivant ce lien.</a></p>
             <p>La cotisation annuelle est de 20 euros, plus 10 euros par équivalent temps plein dans la structure. </p>
             <p>Les OURSES obtenues peuvent ensuite être utilisées comme dépense personnelle du professionnel, paiement d'un part du revenu des salariés s'ils sont d'accord ou en règlement des factures de ses fournisseurs à hauteur maximum de 1 000 euros si ceux-ci sont aussi prestataires de l'Ourse.</p>
         </div>
@@ -24,7 +24,7 @@ require_once('../composants/header.php');
     <div class="container_item_adherer container_item_jaune">
         <h2 class="titles_adherer title_jaune">Corriger mes informations</h2>
         <div class="item_adherer">
-            <p>Contactez-nous pour nous remonter une information vous concernant <a href="/l-ourse/pages/contact.php" class='colored_txt'>Page de contact</a></p>
+            <p>Contactez-nous pour nous remonter une information vous concernant <a href="/pages/contact.php" class='colored_txt'>Page de contact</a></p>
         </div>
     </div>
 </section>

@@ -3,9 +3,9 @@
 $host = '127.0.0.1';
 $db = 'lourse';
 $user = 'root';
-$pass = '';
+$pass = 'root';
 $charset = 'utf8mb4';
- 
+
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 
 try {
@@ -13,13 +13,11 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     throw new PDOException($e->getMessage());
-    echo($pdo);
+    echo ($pdo);
 }
-function BDD($pdo) 
+function BDD($pdo)
 {
     return $pdo;
 }
 require_once('fonctions_user.php');
-$User=new User($pdo);
-
-?>
+$User = new User($pdo);

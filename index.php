@@ -9,12 +9,12 @@ require_once('composants/header.php');
     <div class="items_adherer">
         <h2>Particulier</h2>
         <p class="txt_adherer">Vous souhaitez des renseignement concernant l'adhésion à l'association et utiliser l'OURSE au quotidien ?</p>
-        <a class="links_adherer" href="/l-ourse/pages/particulier.php">Adhérer</a>
+        <a class="links_adherer" href="/pages/particulier.php">Adhérer</a>
     </div>
     <div class="items_adherer">
         <h2>Prestataire</h2>
         <p class="txt_adherer">Vous souhaitez des renseignement pour accepter les OURSES dans vos moyens de paiement et soutenir l'économie locale ?</p>
-        <a class="links_adherer" href="/l-ourse/pages/prestataire.php">Adhérer</a>
+        <a class="links_adherer" href="/pages/prestataire.php">Adhérer</a>
     </div>
     <div class="item_txt_presentation">
         <p class="txt_presentation">Comme <a href="https://www.terreenvie.com/papillonstransition/?AccueilPapillons" class="colored_txt">Papillons Transition</a> nous partons du principe que notre quotidien va être confronté à une diminution des ressources et à des changements climatiques majeurs.</p>

@@ -41,7 +41,7 @@ require_once('../composants/header.php');
             <ul>
                 <li class="colored_txt"><a href="https://monnaie-locale-complementaire-citoyenne.net/">MLCC nationales</a></li>
                 <li class="colored_txt"><a href="https://www.bizh.bzh/">MLCC la bizh (Vannes, Sarzeau...)</a></li>
-                <li class="colored_txt"><a href="https://lerozo.org/" >MLCC du Rozo</a></li>
+                <li class="colored_txt"><a href="https://lerozo.org/">MLCC du Rozo</a></li>
             </ul>
             <p>
                 Tout adhérent d'une des monnaies locales bretonnes peut utiliser l'une de ces monnaies sur leur territoire sans ré-adhérer, simplement en achetant dans un comptoir d'échanges local.</p>
@@ -49,14 +49,14 @@ require_once('../composants/header.php');
     </div>
     <div class="container_items_adherer">
         <div class="items_adherer">
-        <h2>Particulier</h2>
+            <h2>Particulier</h2>
             <p class="txt_adherer">Vous souhaitez des renseignement concernant l'adhésion à l'association et utiliser l'OURSE au quotidien ?</p>
-            <a class="links_adherer" href="/l-ourse/pages/particulier.php">Adhérer</a>
+            <a class="links_adherer" href="/pages/particulier.php">Adhérer</a>
         </div>
         <div class="items_adherer">
-        <h2>Prestataire</h2>
+            <h2>Prestataire</h2>
             <p class="txt_adherer">Vous souhaitez des renseignement pour accepter les OURSES dans vos moyens de paiement et soutenir l'économie locale ?</p>
-            <a class="links_adherer" href="/l-ourse/pages/prestataire.php">Adhérer</a>
+            <a class="links_adherer" href="/pages/prestataire.php">Adhérer</a>
         </div>
     </div>
 </section>
