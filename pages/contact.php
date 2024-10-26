@@ -42,15 +42,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         // Configuration du serveur SMTP
         $mail->Host = "";
-        $mail->Port = 587;
+        $mail->Port = "";
         $mail->SMTPSecure = 'tls';
         $mail->SMTPAuth = true;
-        $mail->Username = "florian.s@miinde.fr";
+        $mail->Username = "";
         $mail->Password = "";
 
         // Paramètres du message
-        $mail->setFrom('florian.s@miinde.fr');
-        $mail->addAddress('florian.s@miinde.fr');
+        $mail->setFrom('');
+        $mail->addAddress('');
         $mail->AddReplyTo($_POST['mail'], $_POST['name']);
         $mail->isHTML(true);
 

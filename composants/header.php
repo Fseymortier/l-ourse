@@ -1,4 +1,4 @@
-<?php require_once($_SERVER['DOCUMENT_ROOT'] . '\db\session.php') ?>
+<?php require_once($_SERVER['DOCUMENT_ROOT'] . '/db/session.php') ?>
 <!DOCTYPE html>
 <html lang="fr">
 

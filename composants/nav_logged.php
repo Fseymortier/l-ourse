@@ -33,7 +33,7 @@ if (isset($_GET['logout'])) {
             <a class="nav_link" href="/pages/contact.php">Contact</a>
         </div>
         <div class="item_menu">
-            <a class="nav_link" href="?logout=1">Se déconnecter</a>
+            <a class="nav_link" href="/composants/logout.php">Se déconnecter</a>
         </div>
     </div>
 </nav>
